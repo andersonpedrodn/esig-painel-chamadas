@@ -2,8 +2,9 @@
 .panel-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
-  background-color: #f0f2f5; 
+  height: calc(100vh - 80px); 
+  background-color: #f0f2f5;
+  position: relative; 
 }
 
 .sidebar-header {
@@ -15,6 +16,19 @@
 
 .sidebar-title {
   margin-bottom: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.section-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
 }
 
 .sidebar-icons {
@@ -26,20 +40,24 @@
 
 .main-content {
   flex: 1; 
-  padding: 2rem;
+  // padding: 2rem;
+    position: relative;
+  // border: 3px solid #ff1919; //teste
 }
 
 .sidebar {
-  width: 420px; 
+  width: 30%; 
   padding: 2rem;
-  background-color: #f0f2f5; 
+  background-color: #f0f2f5;
+  box-sizing: border-box;
+  // border: 3px solid #0056b3;  //teste
   
 }
 .sidebar-content {
   background-color: #ffffff; 
   padding: 2rem;
   border-radius: 8px; 
-  height: 80%; 
+  height: 100%; 
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10); 
 }
 .call-button {
@@ -58,5 +76,47 @@
 
   &:hover {
     background-color: #0056b3;
+  }
+}
+
+.video-player-wrapper,
+.call-display-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem; 
+  box-sizing: border-box; 
+  
+  
+  transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.call-display-wrapper {
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: 10;
+}
+
+.video-player-wrapper {
+  z-index: 5;
+}
+
+.panel-container.call-active {
+  .video-player-wrapper {
+    width: 380px;
+    height: 214px;
+    top: 450px; // Posição para ficar abaixo do histórico
+    left: calc(100% - 400px); // Posição para ficar dentro da sidebar
+    padding: 0; // Remove o padding quando pequeno
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  // A chamada principal fica visível
+  .call-display-wrapper {
+    opacity: 1;
+    transform: scale(1);
   }
 }

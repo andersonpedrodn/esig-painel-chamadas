@@ -1,32 +1,37 @@
 <app-navbar></app-navbar>
 
-
-<main class="panel-container"[ngClass]="{ 'call-active': chamadaAtual}">
+<main class="panel-container" [ngClass]="{ 'call-active': chamadaAtiva }">
   <section class="main-content">
-    <app-video-player></app-video-player>
-  
+
+    <div class="call-display-wrapper">
+      <app-chamada-principal [chamada]="chamadaAtual"></app-chamada-principal>
+    </div>
+
+    <div class="video-player-wrapper">
+      <app-video-player></app-video-player>
+    </div>
+
   </section>
 
- <aside class="sidebar">
-  <div class="sidebar-content">
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <div *ngIf="!chamadaAtiva" class="sidebar-header">
+        <h2 class="sidebar-title">CHAMADAS</h2>
+        <div class="sidebar-icons">
+          <i class="fa-solid fa-volume-high"></i>
+          <i class="fa-solid fa-expand"></i>
+        </div>
+      </div>
 
-    <div class="sidebar-header">
-      <h2 class="sidebar-title">CHAMADAS</h2>
-      <div class="sidebar-icons">
-        <i class="fa-solid fa-volume-high"></i>
-        <i class="fa-solid fa-expand"></i>
+      <div *ngIf="!chamadaAtiva">
+        <h3 class="section-title">SENHA ATUAL</h3>
+        <app-chamada-destaque [chamada]="chamadaAtual"></app-chamada-destaque>
+      </div>
+
+      <div>
+        <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
+        <app-call-log [historico]="historicoChamadas"></app-call-log>
       </div>
     </div>
-
-    <div>
-      <h3 class="section-title">SENHA ATUAL</h3>
-      <app-chamada-destaque [chamada]="chamadaAtual"></app-chamada-destaque>
-    </div>
-
-    <div>
-      <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
-      <app-call-log [historico]="historicoChamadas"></app-call-log>
-    </div>
-
-  </div> </aside>
+  </aside>
 </main>

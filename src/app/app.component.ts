@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
     
     setInterval(() => {
       this.simularNovaChamada();
-    }, 20000); 
+    }, 15000); 
   }
 
   simularNovaChamada(): void {
@@ -54,6 +54,6 @@ export class AppComponent implements OnInit {
     
     this.timerId = setTimeout(() => {
       this.chamadaAtiva = false;
-    }, 15000); 
+    }, 5000); 
   }
 }
