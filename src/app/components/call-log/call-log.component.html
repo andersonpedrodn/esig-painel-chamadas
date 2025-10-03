@@ -1,6 +1,15 @@
-<li *ngFor="let chamada of historico" class="call-item">
-    <span class="senha">{{ chamada.senha }}</span>
-    <span class="nome">{{ chamada.nome }}</span>
-    <span class="guiche">Guichê: {{ chamada.guiche }}</span>
-    <span class="guiche">Guichê: {{ chamada.hora }}</span>
+<ul class="lista-chamadas">
+  <li *ngFor="let chamada of historico" class="item-chamada">
+
+    <div class="informacoes">
+      <span class="senha">{{ chamada.senha }}</span>
+      <span class="nome">{{ chamada.nome }}</span>
+    </div>
+
+    <div class="detalhes">
+      <span class="hora">{{ chamada.hora }}</span>
+      <span class="guiche">Guichê {{ chamada.guiche }}</span>
+    </div>
+
   </li>
+</ul>

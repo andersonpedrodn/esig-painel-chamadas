@@ -1,25 +1,47 @@
-// Faz o container principal ocupar a tela inteira e alinha os itens
+
 .panel-container {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-color: #f0f2f5; // Um cinza claro como cor de fundo. Ajuste se necessário.
+  background-color: #f0f2f5; 
 }
 
-// Define que a área de conteúdo principal deve crescer e ocupar o espaço disponível
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem; 
+}
+
+.sidebar-title {
+  margin-bottom: 0;
+}
+
+.sidebar-icons {
+  display: flex;
+  gap: 1.2rem; 
+  font-size: 1.2rem; 
+  color: #888; 
+}
+
 .main-content {
-  flex: 1; // Este é o segredo para fazer a área principal se expandir
+  flex: 1; 
   padding: 2rem;
 }
 
-// Define uma largura fixa para a barra lateral
 .sidebar {
-  width: 380px; // Largura da barra lateral. Você pode ajustar este valor.
+  width: 420px; 
   padding: 2rem;
-  background-color: #ffffff; // Fundo branco para a barra lateral
-  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1); // Uma sombra sutil à esquerda
+  background-color: #f0f2f5; 
+  
 }
-
+.sidebar-content {
+  background-color: #ffffff; 
+  padding: 2rem;
+  border-radius: 8px; 
+  height: 80%; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10); 
+}
 .call-button {
   position: absolute;
   bottom: 2rem;

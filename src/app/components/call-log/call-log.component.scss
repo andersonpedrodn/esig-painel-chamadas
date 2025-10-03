@@ -1,0 +1,48 @@
+.lista-chamadas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-chamada {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 5px solid #ced4da;
+}
+
+// bloco da esquerda
+.informacoes {
+  .senha {
+    display: block;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+  }
+  .nome {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+  }
+}
+
+// bloco da direita
+.detalhes {
+  text-align: right;
+
+  .hora {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .guiche {
+    display: block;
+    font-weight: bold;
+    color: #333;
+  }
+}

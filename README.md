@@ -16,15 +16,25 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Esta seção detalha os critérios de aceite que foram implementados no projeto.
 
-* ❌ **REQ_01: Aplicação de Página Única (SPA):** A aplicação funciona em uma única tela que muda de estado visualmente.
-* ❌ **REQ_02: Animação Suave:** A transição do componente de vídeo (redução/expansão) é fluida.
-* ❌ **REQ_03: Simulação da Chamada:** Um botão permite disparar o evento de uma nova chamada para fins de teste.
-* ❌ **REQ_04: Timer de Retorno Automático:** O estado de chamada ainda não retorna automaticamente ao estado padrão.
-* ❌ **REQ_05: Reprodução de Vídeo:** O vídeo principal do YouTube é reproduzido em loop.
-* ❌ **REQ_06: Atualização do Histórico:** A cada nova chamada, a lista de histórico é atualizada com a chamada mais recente no topo.
-* ❌ **REQ_07: Código Limpo e Organizado:** O código-fonte foi estruturado em componentes e serviços para maior legibilidade e manutenção.
-* ✅ **REQ_08: Suporte a Playlist:** A URL do YouTube está configurada para funcionar em modo de playlist/loop.
-* ❌ **REQ_09: Responsividade:** O layout ainda precisa de ajustes para ser totalmente responsivo.
+* ✅ **REQ_01: Aplicação de Página Única (SPA):** Deve haver apenas uma tela, cujos estados visuais
+mudam dinamicamente, conforme as imagens de
+referência.
+* ⚠️ **REQ_02: Animação Suave:** A transição do vídeo (redução/expansão e movimento)
+deve ser fluida, sem travamentos ou saltos visuais..
+* ✅ **REQ_03: Simulação da Chamada:** A aplicação deve fornecer um mecanismo claro para
+disparar o evento de uma nova chamada (ex: um botão,
+um timer).
+* ✅ **REQ_04: Timer de Retorno Automático:** O "Estado de Chamada" deve permanecer ativo por 15
+segundos antes de retornar automaticamente ao "Estado
+Padrão".
+* ✅ **REQ_05: Reprodução de Vídeo:** O vídeo principal do YouTube é reproduzido em loop.
+* ✅ **REQ_06: Atualização do Histórico:** A cada nova chamada, a lista de histórico é atualizada com a chamada mais recente no topo.
+* ✅ **REQ_07: Código Limpo e Organizado:** O código-fonte deve ser legível, bem estruturado e conter
+comentários que expliquem a lógica implementada.
+* ✅ **REQ_08: Suporte a Playlist:** A aplicação deve permitir a configuração de uma playlist
+do YouTube, em vez de um único vídeo.
+* ❌ **REQ_09: Responsividade:** A aplicação deve ser responsiva para se adaptar
+conforme o dispositivo. Tamanho mínimo: 1366 x 768.
 
 ## 🛠️ Tecnologias Utilizadas
 

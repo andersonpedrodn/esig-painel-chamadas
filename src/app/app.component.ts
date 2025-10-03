@@ -6,11 +6,12 @@ import { CallLogComponent } from './components/call-log/call-log.component';
 import { Chamada, ChamadaService } from './services/chamada.service';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { ChamadaDestaqueComponent } from './components/chamada-destaque/chamada-destaque.component';
+import { ChamadaPrincipalComponent } from './components/chamada-principal/chamada-principal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, VideoPlayerComponent, CallLogComponent, CommonModule, NavbarComponent, ChamadaDestaqueComponent],
+  imports: [RouterOutlet, VideoPlayerComponent, CallLogComponent, CommonModule, NavbarComponent, ChamadaDestaqueComponent, ChamadaPrincipalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -40,6 +41,9 @@ export class AppComponent implements OnInit {
     const novaChamada = this.chamadaService.gerarNovaChamada();
     this.chamadaAtual = novaChamada;
     this.historicoChamadas = [novaChamada, ...this.historicoChamadas];
+    if (this.historicoChamadas.length > 4) {
+    this.historicoChamadas = this.historicoChamadas.slice(0, 4);
+    }
     this.chamadaAtiva = true;
 
   

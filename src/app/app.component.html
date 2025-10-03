@@ -7,17 +7,26 @@
   
   </section>
 
-  <aside class="sidebar">
-  <h2 class="sidebar-title">CHAMADAS</h2>
+ <aside class="sidebar">
+  <div class="sidebar-content">
 
-  <div>
-    <h3 class="section-title">SENHA ATUAL</h3>
-    <app-chamada-destaque [chamada]="chamadaAtual"></app-chamada-destaque>
-  </div>
+    <div class="sidebar-header">
+      <h2 class="sidebar-title">CHAMADAS</h2>
+      <div class="sidebar-icons">
+        <i class="fa-solid fa-volume-high"></i>
+        <i class="fa-solid fa-expand"></i>
+      </div>
+    </div>
 
-  <div>
-    <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
-    <app-call-log [historico]="historicoChamadas"></app-call-log>
-  </div>
-</aside>
+    <div>
+      <h3 class="section-title">SENHA ATUAL</h3>
+      <app-chamada-destaque [chamada]="chamadaAtual"></app-chamada-destaque>
+    </div>
+
+    <div>
+      <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
+      <app-call-log [historico]="historicoChamadas"></app-call-log>
+    </div>
+
+  </div> </aside>
 </main>
