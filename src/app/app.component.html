@@ -1,16 +1,23 @@
 <app-navbar></app-navbar>
 
 
-<main class="panel-container">
+<main class="panel-container"[ngClass]="{ 'call-active': chamadaAtual}">
   <section class="main-content">
     <app-video-player></app-video-player>
   
-    <!-- <button (click)="novaChamadaSimulada()" class="button-call">
-      Gerar nova chamada
-    </button> -->
   </section>
 
   <aside class="sidebar">
-    <app-call-log></app-call-log>
-  </aside>
+  <h2 class="sidebar-title">CHAMADAS</h2>
+
+  <div>
+    <h3 class="section-title">SENHA ATUAL</h3>
+    <app-chamada-destaque [chamada]="chamadaAtual"></app-chamada-destaque>
+  </div>
+
+  <div>
+    <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
+    <app-call-log [historico]="historicoChamadas"></app-call-log>
+  </div>
+</aside>
 </main>

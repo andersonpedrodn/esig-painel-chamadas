@@ -1,46 +1,56 @@
 import { Injectable } from '@angular/core';
 
+
 export interface Chamada {
   senha: string;
   nome: string;
   guiche: string;
+  hora: string; 
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ChamadaService {
-  private mockChamadas: Chamada[] = [
-    { senha: 'CG-001N', nome: 'João Hebert C Geral', guiche: '1' },
-    { senha: 'CG-002N', nome: 'Maria Souza', guiche: '2' },
-    { senha: 'CG-003N', nome: 'Carlos Pereira', guiche: '1' },
-    { senha: 'CG-001P', nome: 'Ana Costa', guiche: '3' },
-    { senha: 'CG-004N', nome: 'Pedro Lima', guiche: '2' },
-    { senha: 'CG-005N', nome: 'Lucas Fernandes', guiche: '1' },
-    { senha: 'CG-006N', nome: 'Mariana Rocha', guiche: '3' },
-    { senha: 'CG-007N', nome: 'Rafael Alves', guiche: '2' },
-    { senha: 'CG-008N', nome: 'Beatriz Martins', guiche: '1' },
-    { senha: 'CG-009N', nome: 'Felipe Gomes', guiche: '3' },
+  private mockNomes: Omit<Chamada, 'senha' | 'hora'>[] = [
+    { nome: 'CARLOS PEREIRA', guiche: '02' },
+    { nome: 'ANA LIMA', guiche: '04' },
+    { nome: 'JOSÉ SANTOS', guiche: '01' },
+    { nome: 'MARIA SILVA', guiche: '03' },
+    { nome: 'PEDRO ALVES', guiche: '05' },
   ];
-  private contadorSenhas = 10;
+  private contadorDeSenhas = 3; 
+  private prefixos = ['CG', 'P', 'N']; 
 
-  constructor() {}
+  constructor() { }
 
-  getChamadas(): Chamada[] {
-    return this.mockChamadas.slice(0, 4);
+  
+  getChamadasIniciais(): Chamada[] {
+    return [
+      { senha: 'CG-003N', nome: 'CARLOS PEREIRA', guiche: '01', hora: '15:40' },
+      { senha: 'CG-002N', nome: 'MARIA SOUZA', guiche: '02', hora: '15:39' },
+      { senha: 'CG-001N', nome: 'JOÃO HEBERT C GERAL', guiche: '1', hora: '15:38' },
+    ];
   }
 
-  novasChamadas(): Chamada {
-    const indiceAleatorio = Math.floor(Math.random() * this.mockChamadas.length);
-    const paciente = this.mockChamadas[indiceAleatorio];
 
-    this.contadorSenhas++;
-    const novaSenha = `${paciente.senha.charAt(0)}${String(this.contadorSenhas).padStart(3, '0')}`;
-  
+  gerarNovaChamada(): Chamada {
+    this.contadorDeSenhas++;
+
+    
+    const prefixo = this.prefixos[this.contadorDeSenhas % this.prefixos.length];
+    const novaSenha = `${prefixo}-${String(this.contadorDeSenhas).padStart(3, '0')}N`;
+
+    const paciente = this.mockNomes[Math.floor(Math.random() * this.mockNomes.length)];
+
+    const horaAtual = new Date();
+    const horaFormatada = `${horaAtual.getHours()}:${String(horaAtual.getMinutes()).padStart(2, '0')}`;
+
     return {
       senha: novaSenha,
       nome: paciente.nome,
       guiche: paciente.guiche,
+      hora: horaFormatada 
     };
   }
 }

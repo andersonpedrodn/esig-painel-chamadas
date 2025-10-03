@@ -1,0 +1,26 @@
+.display-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #17a2b8; // Cor verde-água do destaque
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+}
+
+.info {
+  .senha {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: block;
+  }
+
+  .nome {
+    font-size: 1rem;
+  }
+}
+
+.guiche {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
