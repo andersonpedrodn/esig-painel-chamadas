@@ -19,3 +19,22 @@
   background-color: #ffffff; // Fundo branco para a barra lateral
   box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1); // Uma sombra sutil à esquerda
 }
+
+.call-button {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 100; 
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
