@@ -34,10 +34,10 @@ import {
     trigger('fade', [
       transition(':enter', [
         style({ opacity: 0 }), 
-        animate('300ms ease-in', style({ opacity: 1 })), 
+        animate('600ms ease-in', style({ opacity: 1 })), 
       ]),
       transition(':leave', [
-        animate('300ms ease-out', style({ opacity: 0 })), 
+        animate('600ms ease-out', style({ opacity: 0 })), 
       ]),
     ]),
   ],
@@ -58,13 +58,20 @@ export class AppComponent implements OnInit {
 
     setInterval(() => {
       this.simularNovaChamada();
-    }, 15000);
+    }, 25000);
   }
 
   simularNovaChamada(): void {
     const novaChamada = this.chamadaService.gerarNovaChamada();
     this.chamadaAtual = novaChamada;
     this.historicoChamadas = [novaChamada, ...this.historicoChamadas];
+
+    const avisoSonoro = new Audio('/assets/audio/ding.mp3');
+    avisoSonoro.play();
+    setTimeout(() => {
+      avisoSonoro.play();
+    }, 3000);
+
     if (this.historicoChamadas.length > 4) {
       this.historicoChamadas = this.historicoChamadas.slice(0, 4);
     }
@@ -76,6 +83,6 @@ export class AppComponent implements OnInit {
 
     this.timerId = setTimeout(() => {
       this.chamadaAtiva = false;
-    }, 5000);
+    }, 15000);
   }
 }

@@ -8,7 +8,7 @@
     </div>
 
     <div class="video-player-wrapper">
-      <app-video-player></app-video-player>
+      <app-video-player [isMuted]="false"></app-video-player>
     </div>
 
   </section>
@@ -33,9 +33,9 @@
         <app-call-log [historico]="historicoChamadas"></app-call-log>
       </div>
       
-      <div *ngIf="chamadaAtiva" class="video-pequeno">
-      <app-video-player></app-video-player>
-    </div>
+      <div class="video-pequeno">
+        <app-video-player [isMuted]="true"></app-video-player>
+      </div>
     </div>
     
   </aside>

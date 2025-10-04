@@ -49,6 +49,9 @@
   padding: 2rem;
   background-color: #f0f2f5;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
   
 }
 .sidebar-content {
@@ -88,6 +91,8 @@
   height: 100%;
   padding: 2rem; 
   box-sizing: border-box;
+
+  
   
   
   
@@ -102,6 +107,13 @@
 
 .video-player-wrapper {
   z-index: 5;
+}
+
+.video-pequeno {
+  opacity: 0;
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  transform: translateY(20px);
+  pointer-events: none;
 }
 
 .panel-container.call-active {
@@ -123,11 +135,13 @@
   }
 
   .video-pequeno {
-  margin-top: auto; // Empurra o vídeo para o final do espaço disponível na sidebar
-  padding-top: 2rem; // Cria um espaço acima do vídeo
-  height: 214px;
+    margin-top: auto; 
+    padding-top: 2rem; 
+    height: 214px;
+    transform: scale(0.9);
+    opacity: 1;
   
-  // O seletor "::ng-deep" força o estilo a ser aplicado no componente filho
+  
   ::ng-deep app-video-player {
     border-radius: 8px;
     overflow: hidden;
