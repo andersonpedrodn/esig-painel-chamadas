@@ -97,3 +97,6 @@ A aplicação estará disponível em `http://localhost:4200/`.
 1. **Apresentação do funcionamento:**
 *https://youtu.be/eStxNvsp1Uc*
 
+2. **Apresentação do projeto**
+*https://youtu.be/mw6_V5zod_E*
+
