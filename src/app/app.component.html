@@ -32,6 +32,11 @@
         <h3 class="section-title">HISTÓRICO DE CHAMADAS</h3>
         <app-call-log [historico]="historicoChamadas"></app-call-log>
       </div>
+      
+      <div *ngIf="chamadaAtiva" class="video-pequeno">
+      <app-video-player></app-video-player>
     </div>
+    </div>
+    
   </aside>
 </main>
