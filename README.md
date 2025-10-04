@@ -1,5 +1,8 @@
 # Painel de Chamadas para Sala de Espera (Desafio de Estágio ESIG Group)
 
+<img width="1897" height="895" alt="Captura de tela 2025-10-03 211552" src="https://github.com/user-attachments/assets/a9054529-1405-46b9-8abc-60df5e1f0376" />
+
+
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)
