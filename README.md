@@ -1,6 +1,7 @@
 # Painel de Chamadas para Sala de Espera (Desafio de Estágio ESIG Group)
 
 <!-- <img width="1897" height="895" alt="Captura de tela 2025-10-03 211552" src="https://github.com/user-attachments/assets/a9054529-1405-46b9-8abc-60df5e1f0376" /> -->
+🎬 Demonstração em GIF
 ![Desktop2025 10 04-14 08 55 04-ezgif com-video-to-gif-converter (1)](https://github.com/user-attachments/assets/c6835044-eb20-444a-8740-6f332d88a98e)
 
 
@@ -89,5 +90,9 @@ Siga os passos abaixo para rodar o projeto na sua máquina.
 
 A aplicação estará disponível em `http://localhost:4200/`.
 
-## 📹 Vídeo de Apresentação
-*Link para o vídeo de 10-15 minutos apresentando a aplicação e explicando os conceitos de CSS aplicados.*
+
+## 📹 Vídeo de Apresentação 
+
+1. **Apresentação do funcionamento:**
+*https://youtu.be/eStxNvsp1Uc*
+
